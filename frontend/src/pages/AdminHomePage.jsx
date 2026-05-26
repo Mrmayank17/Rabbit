@@ -60,8 +60,14 @@ const AdminHomePage = () => {
                                 orders.map((order) => (
                                     <tr key={order._id} className='border-b hover:bg-gray-50 cursor-pointer'>
                                         <td className='py-2 font-semibold'>{order._id}</td>
-                                        <td className='py-2 text-gray-500'>{order.user.name}</td>
-                                        <td className='py-2 text-gray-500'>&#8377;{order.totalPrice.toFixed(2).toLocaleString()}</td>
+
+                                        <td className='py-2 text-gray-500'>
+                                            {order.user?.name || "User Deleted"}
+                                        </td>
+
+                                        <td className='py-2 text-gray-500'>
+                                            &#8377; {order.totalPrice?.toFixed(2)}
+                                        </td>
                                         <td className='py-2 text-gray-500'>{order.status}</td>
                                     </tr>
                                 ))

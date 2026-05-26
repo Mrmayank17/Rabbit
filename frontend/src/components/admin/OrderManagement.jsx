@@ -43,7 +43,7 @@ const OrderManagement = () => {
                             orders.map((order) => (
                                 <tr key={order._id} className='border-b hover:bg-gray-50 cursor-pointer'>
                                     <td className='font-medium p-4 text-gray-900 whitespace-nowrap'>{order._id}</td>
-                                    <td className="p-4">{order.user.name}</td>
+                                    <td className="p-4">{order.user?.name || "User Deleted"}</td>
                                     <td className="p-4">&#8377;{order.totalPrice?.toFixed(2).toLocaleString()}</td>
                                     <td className="p-4">
                                         <select
